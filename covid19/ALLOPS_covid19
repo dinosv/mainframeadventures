@@ -1,0 +1,60 @@
+//ALLOPS    JOB ,'MVS TOOLBOX',CLASS=A,MSGCLASS=A,                      00000100
+//           USER=HERC01,PASSWORD=CUL8TR                                00000101
+//*                                                                     00000200
+//* ******************************************************************  00000304
+//*  ALLOCATE PS SEQUENTIAL FILE                                        00000401
+//*                                                                     00000501
+//*  THINGS TO ADAPT TO YOUR NEEDS:                                     00000601
+//*    DSN=     THE NAME OF YOUR DATA SET                               00000701
+//*    SPACE=   CYLINDERS OR TRACKS YOU WANT TO ALLOCATE                00000801
+//*             X = PRIMARY QUANTITY (HOW MANY TO ALLOCATE)             00000903
+//*             Y = SECONDARY QUANTITY (HOW MANY IF MORE SPACE NEEDED)  00001003
+//*    VOL=SER= THE DASD WHERE THE DATA WILL BE ALLOCATED               00001101
+//*    LRECL=   RECORD LENGTH                                           00001201
+//*    BLKSIZE= BLOCK SIZE                                              00001301
+//* ******************************************************************  00001404
+//*  ALLOCATE COVID19.DATA.DAILY                                        00001500
+//* ******************************************************************  00001600
+//COPYDATA EXEC PGM=IEBGENER                                            00001700
+//SYSPRINT   DD SYSOUT=*                                                00001800
+//SYSIN      DD DUMMY                                                   00001900
+//SYSUT2     DD DSN=COVID19.DATA.DAILY,                                 00002000
+//           DISP=(NEW,CATLG,DELETE),                                   00002100
+//           SPACE=(CYL,(2,3),RLSE),                                    00002200
+//           UNIT=SYSDA,                                                00002300
+//           VOL=SER=DINO01,                                            00002400
+//           DCB=(DSORG=PS,RECFM=FB,LRECL=80,BLKSIZE=8000)              00002500 
+//SYSUT1     DD *                                                       
+00000000000000000000000000000000000000000000000000000000000000000000000000000000
+/*                                                                      
+//* ******************************************************************  00002800
+//*  ALLOCATE COVID19.DATA.TOTCNTRY                                     00002800
+//* ******************************************************************  00002900
+//COPYDATA EXEC PGM=IEBGENER                                            00003000
+//SYSPRINT   DD SYSOUT=*                                                00003100
+//SYSIN      DD DUMMY                                                   00003200
+//SYSUT2     DD DSN=COVID19.DATA.TOTCNTRY,                              00003300
+//           DISP=(NEW,CATLG,DELETE),                                   00003400
+//           SPACE=(TRK,(2,1),RLSE),                                    00003500
+//           UNIT=SYSDA,                                                00002300
+//           VOL=SER=DINO01,                                            00002400
+//           DCB=(DSORG=PS,RECFM=FB,LRECL=59,BLKSIZE=590)               00003600
+//SYSUT1     DD *
+00000000000000000000000000000000000000000000000000000000000
+/*
+//* ******************************************************************  00002800
+//*  ALLOCATE COVID19.DATA.TOTCPREV                                     00002800
+//* ******************************************************************  00002900
+//COPYDATA EXEC PGM=IEBGENER                                            00003000
+//SYSPRINT   DD SYSOUT=*                                                00003100
+//SYSIN      DD DUMMY                                                   00003200
+//SYSUT2     DD DSN=COVID19.DATA.TOTCPREV,                              00003300
+//           DISP=(NEW,CATLG,DELETE),                                   00003400
+//           SPACE=(TRK,(2,1),RLSE),                                    00003500
+//           UNIT=SYSDA,                                                00002300
+//           VOL=SER=DINO01,                                            00002400
+//           DCB=(DSORG=PS,RECFM=FB,LRECL=59,BLKSIZE=590)               00003600
+//SYSUT1     DD *
+00000000000000000000000000000000000000000000000000000000000
+/*
+//
