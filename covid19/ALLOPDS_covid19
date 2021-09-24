@@ -14,16 +14,27 @@
 //*    LRECL=   RECORD LENGTH                                           00001300
 //*    BLKSIZE= BLOCK SIZE                                              00001400
 //* ******************************************************************  00001501
-//* Se debe generar un pds COVID19.SRC.COBOL y uno COVID19.SRC.LINKLIB  00001600
-//*                                                                     00001600
+//*  ALLOCATE PARTITIONED DATA SET FOR COVID19.LINKLIB (BINARIES)       00001600
+//*                                                                     00001601
 //ALLOCATE EXEC PGM=IEFBR14                                             00001700
 //SYSPRINT   DD SYSOUT=*                                                00001800
 //SYSOUT     DD SYSOUT=*                                                00001900
 //SYSDUMP    DD SYSOUT=*                                                00002000
 //DD1        DD DSN=COVID19.LINKLIB,                                    00002102
 //           DISP=(NEW,CATLG,DELETE),                                   00002200
-//           SPACE=(TRK,(20,9,2),RLSE),                                 00002301
+//           SPACE=(TRK,(10,10,2),RLSE),                                00002301
 //           UNIT=SYSDA,                                                00002400
 //           VOL=SER=DINO01,                                            00002500
 //           DCB=(DSORG=PO,RECFM=FB,LRECL=80,BLKSIZE=800)               00002600
-//                                                                      00002700
+//* ******************************************************************  00002700
+//*  ALLOCATE PARTITIONED DATA SET FOR COVID19.SRC.COBOL (SOURCE CODE)  00002800
+//SYSPRINT   DD SYSOUT=*                                                00003000
+//SYSOUT     DD SYSOUT=*                                                00003100
+//SYSDUMP    DD SYSOUT=*                                                00003200
+//DD1        DD DSN=COVID19.SRC.COBOL,                                  00003300
+//           DISP=(NEW,CATLG,DELETE),                                   00003400
+//           SPACE=(TRK,(5,5,2),RLSE),                                  00003500
+//           UNIT=SYSDA,                                                00003600
+//           VOL=SER=DINO01,                                            00003700
+//           DCB=(DSORG=PO,RECFM=FB,LRECL=80,BLKSIZE=800)               00003800
+//                                                                      00003900

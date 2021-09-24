@@ -3,7 +3,7 @@
 # Get data from Internet
 # and then generate JCL to be SUBmitted to MVS 3.8jk TK4-
 cat JCLtemplate.txt > uploadToMVS.JCL
-python getcovid19data.py >> uploadToMVS.JCL
+python3 getcovid19data.py >> uploadToMVS.JCL
 echo '/*' >> uploadToMVS.JCL
 echo '//' >> uploadToMVS.JCL
 
