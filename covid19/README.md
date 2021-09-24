@@ -11,8 +11,10 @@ In this project I created a series of programs for Linux and MVS 3.8j TK4- to ge
 * MVS 3.8j TK4- with
   * Internal Card Reader socket configured (*000C 3505 localhost:3505 sockdev autopad trunc ascii eof*)
   * COBOL compiler
-  * Data set LRECL=59 for the totals per country. In my system it's called *COVID19.DATA.TOTCNTRY*, but you can modify the *$EXECTOT* JCL and then call it differently.
-
+  * Partitioned datasets *COVID19.SCR.COBOL* and *COVID19.LINKLIB* both can be generated with the ALLOPDS_covid19 JCL
+  * Sequential dataset LRECL=59 for the totals per country *COVID19.DATA.TOTCNTRY* and *COVID19.DATA.TOTCPREV* 
+  * Sequential dataset LRECL=80 for the raw data. All PS can be generated with the ALLOPS_covid19 JCL
+  
 ## On Linux
 
 In crontab, I have a daily job (*copyCOVID19data_toMVS.sh*) that runs every day at midnight and retrieves data from the [EU Open Data Portal](https://data.europa.eu/euodp/en/data/dataset/covid-19-coronavirus-data), using a Shell script and a Python program.
