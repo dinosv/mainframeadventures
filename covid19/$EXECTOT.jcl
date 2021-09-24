@@ -25,7 +25,7 @@
 //TOTPRV    DD DISP=SHR,DSN=COVID19.DATA.TOTCPREV                       00002505
 //* UP TO 5 COUNTRY CODES CAN BE SPECIFIED AS FAVOURITE COUNTRIES       00002602
 //SYSIN     DD *                                                        00002701
-DEUESPGBRCANSWE                                                         00002810
+CHLESPGBRCANSWE                                                         00002810
 /*                                                                      00002901
 //************************************************                      00003009
 //* COPY TOTCNTRY TO TOTCPREV,                                          00003109
@@ -58,7 +58,7 @@ DEUESPGBRCANSWE                                                         00002810
 //             DISP=(NEW,CATLG,DELETE),                                 00005809
 //             SPACE=(TRK,(1,1),RLSE),                                  00005909
 //             UNIT=SYSDA,                                              00006009
-//             VOL=SER=DASTA1,                                          00006109
+//             VOL=SER=DINO01,                                          00006109
 //             DCB=(DSORG=PS,RECFM=FB,LRECL=59,BLKSIZE=590)             00006209
 //SYSIN     DD DUMMY                                                    00006309
 //                                                                      00006400
