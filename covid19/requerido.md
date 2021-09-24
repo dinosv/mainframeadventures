@@ -10,4 +10,3 @@ Generé los PS siguientes con el archivo ALLOPS_covid19
 COVID19.DATA.DAILY    
 COVID19.DATA.TOTCNTRY 
 COVID19.DATA.TOTCPREV 
-
