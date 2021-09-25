@@ -17,7 +17,7 @@ In this project I created a series of programs for Linux and MVS 3.8j TK4- to ge
   
 ## On Linux
 
-In crontab, I have a daily job (*copyCOVID19data_toMVS.sh*) that runs every day at midnight and retrieves data from the [EU Open Data Portal](https://data.europa.eu/euodp/en/data/dataset/covid-19-coronavirus-data), using a Shell script and a Python program.
+In crontab, I have a daily job (*copyCOVID19data_toMVS.sh*) that runs every day at midnight and retrieves data from the <strike>[EU Open Data Portal](https://data.europa.eu/euodp/en/data/dataset/covid-19-coronavirus-data)</strike> (changed to [Our World in Data](https://ourworldindata.org)), using a Shell script and a Python program.
 
 This script, has several steps:
 
